@@ -1,0 +1,17 @@
+---
+- hosts: server  # 需要執行的主機
+  become: false  # use sudo
+  tasks:
+    - name: start fedtree server
+      # command: ls ~
+      ansible.builtin.command: <fedtree_project_folder>/build/bin/FedTree-distributed-server <this_project_path>/server.conf
+      async: 600 # run server for 10 minutes
+      poll: 0
+      
+- hosts: clients  # 需要執行的主機
+  become: false  # use sudo
+  tasks:
+    - name: start fedtree training
+      ansible.builtin.command: <fedtree_project_folder>/build/bin/FedTree-distributed-party <this_project_path>/client.conf {{machine_index}}
+      register: out
+    - debug: var=out.stdout_lines
