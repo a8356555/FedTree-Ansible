@@ -7,20 +7,28 @@
 
 # 2. Ansible Setting
 1. setting ansible hosts:
-        vi /etc/ansible/hosts
-                [fedtree_server]
-                server1 ansible_ssh_host=<ip0>
 
-                [fedtree_client]
-                client1 ansible_ssh_host=<ip1>
-                client2 ansible_ssh_host=<ip2>
-                client3 ansible_ssh_host=<ip3>
+      vi /etc/ansible/hosts
+   
+       [fedtree_server]
+       server1 ansible_ssh_host=<ip0>
+
+       [fedtree_client]
+       client1 ansible_ssh_host=<ip1>
+       client2 ansible_ssh_host=<ip2>
+       client3 ansible_ssh_host=<ip3>
 2. set host_vars machine_index for each client
-        vi /etc/ansible/group_vars/client1
-                machine_index: 0
-        vi /etc/ansible/group_vars/client2
-                machine_index: 1
-        vi /etc/ansible/group_vars/client3
-                machine_index: 2
+  
+      vi /etc/ansible/group_vars/client1
+       
+       machine_index: 0
+  
+      vi /etc/ansible/group_vars/client2
+          
+       machine_index: 1
+      
+      vi /etc/ansible/group_vars/client3
+       
+       machine_index: 2
 
             
