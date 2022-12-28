@@ -31,4 +31,8 @@
        
        machine_index: 2
 
+# 3. Start Training using ansible
+   * after dataset is ready and both fedtree conf and start_training.yml are modified, run following cmd in terminal:
+      
+      ansible-playbook start_training.yml
             
