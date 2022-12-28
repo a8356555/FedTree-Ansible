@@ -1,11 +1,14 @@
-# 1. Preparation
+# FedTree-Ansible
+* Use Ansible to easily run distributed federated learning framework FedTree in 1 command
+
+## 1. Preparation
 1. install ansible https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 2. install FedTree https://github.com/Xtra-Computing/FedTree
 3. set ssh connection for ansible clients https://docs.ansible.com/ansible/latest/inventory_guide/connection_details.html
     * set alias (server / client1 ...) in /etc/hosts
 4. set ssh connection from fedtree clients to fedtree server
 
-# 2. Ansible Setting
+## 2. Ansible Setting
 1. setting ansible hosts:
 
       vi /etc/ansible/hosts
@@ -31,7 +34,7 @@
        
        machine_index: 2
 
-# 3. Start Training using ansible
+## 3. Start Training using ansible
    * after dataset is ready and both fedtree conf and start_training.yml are modified, run following cmd in terminal:
       
       ansible-playbook start_training.yml
